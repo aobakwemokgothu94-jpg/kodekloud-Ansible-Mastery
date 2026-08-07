@@ -1,0 +1,57 @@
+---
+# Week 4 - Advanced Ansible Practice
+# Overview:
+# This playbook demonstrates five Ansible concepts:
+# 1. Facts Gathering
+# 2. User & Group Management
+# 3. Jinja2 Templates
+# 4. Setup Httpd and PHP
+# 5. Conditionals
+
+- name: Week 4 - Advanced Ansible Practice
+  hosts: all
+  become: true
+
+  tasks:
+    # Task 1: Facts Gathering
+    - name: Task 1 - Gather facts about the system
+      ansible.builtin.setup:
+
+    # Task 2: Create Users and Groups
+    - name: Task 2 - Create group 'developers'
+      ansible.builtin.group:
+        name: developers
+        state: present
+
+    - name: Task 2 - Create user 'devuser' in group 'developers'
+      ansible.builtin.user:
+        name: devuser
+        group: developers
+        state: present
+
+    # Task 3: Manage Jinja2 Templates
+    - name: Task 3 - Deploy nginx.conf from Jinja2 template
+      ansible.builtin.template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+
+    # Task 4: Setup Httpd and PHP
+    - name: Task 4 - Install httpd and php packages
+      ansible.builtin.package:
+        name:
+          - httpd
+          - php
+        state: present
+
+    - name: Task 4 - Ensure httpd service is running
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
+
+    # Task 5: Using Conditionals
+    - name: Task 5 - Restart httpd only if nginx.conf changed
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      when: ansible_facts['os_family'] == "RedHat"
