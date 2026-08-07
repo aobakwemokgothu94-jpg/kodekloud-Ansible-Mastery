@@ -1,13 +1,17 @@
-## kodekloud-Ansible-Mastery/
+kodekloud-Ansible-Mastery/
 ├── README.md          ← overview of the whole repo
 ├── Week 1/
 │   ├── week1-ansible.yml
 │   └── README.md      ← details for Week 1
-└── Week 2/
-    ├── week2-ansible.yml
-    └── README.md      ← details for Week 2
-
-
+├── Week 2/
+│   ├── week2-ansible.yml
+│   └── README.md      ← details for Week 2
+├── Week 3/
+│   ├── week3-ansible.yml
+│   └── README.md      ← details for Week 3
+└── Week 4/
+├── week4-ansible.yml
+└── README.md      ← details for Week 4
 
 This repository contains my practice playbooks and notes for mastering Ansible, organized week by week.
 
