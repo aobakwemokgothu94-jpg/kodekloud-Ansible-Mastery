@@ -1,0 +1,51 @@
+---
+# Week 3 - Advanced Ansible Modules Practice
+# Overview:
+# This playbook demonstrates five Ansible modules:
+# 1. File (Soft Links)
+# 2. ACL
+# 3. Service
+# 4. Lineinfile
+# 5. Replace
+
+- name: Week 3 - Advanced Ansible Modules Practice
+  hosts: all
+  become: true
+
+  tasks:
+    # Task 1: Creating Soft Links
+    - name: Task 1 - Create a soft link for /var/log/nginx
+      ansible.builtin.file:
+        src: /var/log/nginx
+        dest: /tmp/nginx_logs_link
+        state: link
+
+    # Task 2: Managing ACLs
+    - name: Task 2 - Add ACL for user 'developer' on /var/www/html
+      ansible.posix.acl:
+        path: /var/www/html
+        entity: developer
+        etype: user
+        permissions: rwx
+        state: present
+
+    # Task 3: Manage Services
+    - name: Task 3 - Ensure nginx service is running and enabled
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    # Task 4: Lineinfile Module
+    - name: Task 4 - Ensure a line exists in /etc/hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: "127.0.0.1   myapp.local"
+        state: present
+
+    # Task 5: Replace Module
+    - name: Task 5 - Replace port 8080 with 9090 in nginx.conf
+      ansible.builtin.replace:
+        path: /etc/nginx/nginx.conf
+        regexp: '8080'
+        replace: '9090'
