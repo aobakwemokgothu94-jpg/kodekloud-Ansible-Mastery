@@ -55,3 +55,22 @@
         name: httpd
         state: restarted
       when: ansible_facts['os_family'] == "RedHat"
+
+## Tracking My Workflow While Blogging
+
+When I’m editing my Ansible playbooks or writing blog posts, Edge captures metadata about my open tabs.  
+This is useful for documenting my workflow because it shows which tab is active and which ones are in the background.
+
+```python
+# User's Edge browser tabs metadata.
+# The tab with `isCurrent=true` is the user's currently active/viewing tab,
+# while tabs with `isCurrent=false` are other open tabs in the background.
+
+edge_all_open_tabs = [
+    {
+        "pageTitle": "New File at / · aobakwemokgothu94-jpg/kodekloud-Ansible-Mastery",
+        "pageUrl": "https://github.com/aobakwemokgothu94-jpg/kodekloud-Ansible-Mastery/new/main?filename=.github/workflows/main.yml&workflow_template=blank",
+        "tabId": 2055803153,
+        "isCurrent": true
+    }
+]
