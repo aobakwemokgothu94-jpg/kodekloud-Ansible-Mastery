@@ -81,3 +81,22 @@ This folder contains the playbook `week3-ansible.yml` which demonstrates advance
 ```bash
 ansible-playbook week3-ansible.yml -i inventory
 
+## 📘 Week 4 - Advanced Ansible Practice
+
+This folder contains the playbook `week4-ansible.yml` which demonstrates advanced Ansible concepts.
+
+### Tasks
+1. **Facts Gathering** – Collect system information using `setup`  
+   *Revision Date: 2026-07-31*  
+2. **Create Users and Groups** – Add group `developers` and user `devuser`  
+   *Revision Date: 2026-08-01*  
+3. **Jinja2 Templates** – Deploy configuration files from templates  
+   *Revision Date: 2026-08-01*  
+4. **Setup Httpd and PHP** – Install and configure Apache (`httpd`) with PHP support  
+   *Revision Date: 2026-08-01*  
+5. **Conditionals** – Apply tasks only when conditions are met (e.g., restart httpd on RedHat systems)  
+   *Revision Date: 2026-08-01*  
+
+### Example Usage
+```bash
+ansible-playbook week4-ansible.yml -i inventory
