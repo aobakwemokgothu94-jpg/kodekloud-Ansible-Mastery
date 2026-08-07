@@ -27,7 +27,7 @@ Use the following command to run any week’s playbook:
 ```bash
 ansible-playbook weekX-ansible.yml -i inventory
 
-# Week 1 - Ansible Basics
+## 📘Week 1 - Ansible Basics
 
 This folder contains introductory playbooks for Week 1 practice.  
 The focus is on getting familiar with Ansible fundamentals.
@@ -45,7 +45,7 @@ Run a playbook with:
 ansible-playbook week1.yml -i inventory
 
 
-# Week 2 - Ansible Modules Practice
+##📘 Week 2 - Ansible Modules Practice
 
 This folder contains the playbook `week2-ansible.yml` which demonstrates five Ansible modules.
 
@@ -60,3 +60,24 @@ This folder contains the playbook `week2-ansible.yml` which demonstrates five An
 Run the playbook with:
 ```bash
 ansible-playbook week2-ansible.yml -i inventory
+
+##📘  Week 3 - Advanced Ansible Modules
+
+This folder contains the playbook `week3-ansible.yml` which demonstrates advanced Ansible modules.
+
+### Tasks
+1. **File (Soft Links)** – Create a soft link from `/var/log/nginx` to `/tmp/nginx_logs_link`  
+   *Revision Date: 2026-07-28*  
+2. **ACL Module** – Grant user `developer` rwx permissions on `/var/www/html`  
+   *Revision Date: 2026-07-29*  
+3. **Service Module** – Ensure `nginx` service is running and enabled  
+   *Revision Date: 2026-07-30*  
+4. **Lineinfile Module** – Add `127.0.0.1 myapp.local` to `/etc/hosts`  
+   *Revision Date: 2026-07-30*  
+5. **Replace Module** – Replace port `8080` with `9090` in `nginx.conf`  
+   *Revision Date: 2026-07-30*  
+
+### Example Usage
+```bash
+ansible-playbook week3-ansible.yml -i inventory
+
