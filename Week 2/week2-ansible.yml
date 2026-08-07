@@ -1,0 +1,49 @@
+---
+# Week 2 - Ansible Modules Practice
+# Overview:
+# This playbook demonstrates five Ansible modules:
+# 1. Ping
+# 2. Install Package
+# 3. Archive
+# 4. Unarchive
+# 5. Blockinfile
+
+- name: Week 2 - Ansible Modules Practice
+  hosts: all
+  become: true
+
+  tasks:
+    # Task 1: Ping Module
+    - name: Task 1 - Test connectivity with all hosts
+      ansible.builtin.ping:
+
+    # Task 2: Install Package Module
+    - name: Task 2 - Ensure nginx is installed
+      ansible.builtin.package:
+        name: nginx
+        state: present
+
+    # Task 3: Archive Module
+    - name: Task 3 - Archive /var/log directory
+      ansible.builtin.archive:
+        path: /var/log
+        dest: /tmp/logs.tar.gz
+
+    # Task 4: Unarchive Module
+    - name: Task 4 - Extract archived logs
+      ansible.builtin.unarchive:
+        src: /tmp/logs.tar.gz
+        dest: /tmp/logs
+
+    # Task 5: Blockinfile Module
+    - name: Task 5 - Insert custom block into nginx.conf
+      ansible.builtin.blockinfile:
+        path: /etc/nginx/nginx.conf
+        block: |
+          # Custom block added by Ansible
+          server {
+            listen 8080;
+            location / {
+              root /var/www/html;
+            }
+          }
