@@ -12,6 +12,11 @@ kodekloud-Ansible-Mastery/
 └── Week 4/
 ├── week4-ansible.yml
 └── README.md      ← details for Week 4
+## Weeks Covered
+- [Week 1 – Ansible Basics](./Week%201/README.md)
+- [Week 2 – Ansible Modules Practice](./Week%202/README.md)
+- [Week 3 – Advanced Ansible Modules](./Week%203/README.md)
+- [Week 4 – Advanced Ansible Practice](./Week%204/README.md)
 
 This repository contains my practice playbooks and notes for mastering Ansible, organized week by week.
 
