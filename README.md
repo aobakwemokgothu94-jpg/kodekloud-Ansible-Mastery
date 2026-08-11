@@ -109,3 +109,7 @@ This folder contains the playbook `week4-ansible.yml` which demonstrates advance
 ### Example Usage
 ```bash
 ansible-playbook week4-ansible.yml -i inventory
+
+
+https://engineer.kodekloud.com/certificate-verification/cb12a005-fdfe-4d2b-bc6b-dffd7fa6702e
+
